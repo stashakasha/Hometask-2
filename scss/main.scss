@@ -1,0 +1,53 @@
+@import 'reset';
+@import 'mixin';
+@import 'variables';
+@import 'header';
+@import 'services';
+@import 'destinations';
+@import 'book';
+@import 'testimolials';
+@import 'logos';
+@import 'subscribe';
+@import 'footer';
+
+
+body {
+    font-family: $main_font;
+    background-color: $background;
+}
+.main-container {
+    max-width: 1440px;
+    height: 100%;
+    background: $white;
+    margin: 30px auto;
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.1); 
+}
+.subtitle {
+    margin-top: 105px;
+    font-weight: $semi-bold;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $light;
+}
+.title {
+    margin-top: 10px;
+    font-family: $font_acent;
+    font-weight: $bold;
+    font-size: 50px;
+    line-height: 64px;
+    text-align: center;
+    text-transform: capitalize;
+    color: $dark;
+} 
+
+
+@media (max-width: 780px) {
+    .subtitle {
+        margin-top: 50px;
+    }
+    .title {
+        font-size: 30px;
+    }
+}

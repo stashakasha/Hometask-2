@@ -1,0 +1,31 @@
+@mixin links() {
+    a {
+        overflow: hidden;
+        transition: transform .3s;
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+        &:focus {
+            transform: scale(1.2);
+        }
+        &:active {
+            color: $primary;
+        }
+    }
+}
+@mixin button() {
+    button {
+        transition: transform .1s;
+        &:hover {
+            text-decoration: underline;
+        }
+        &:focus {
+            text-decoration: underline;
+        }
+        &:active {
+            transform: scale(1.1);
+        }
+    }
+    
+}

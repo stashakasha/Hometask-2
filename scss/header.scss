@@ -1,0 +1,253 @@
+@import 'mixin';
+@import 'variables';
+
+/*___HEADER___*/
+
+.header {
+    position: relative;
+    background: url("../img/header/Decore.png") 736px -149px no-repeat, 
+                url("../img/header/Ellipse.png") no-repeat;   
+    @include links();
+    @include button();
+
+    .header__pagination-container { 
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding-top: 47px;
+    @media (max-width: 896px) {
+        justify-content: center;
+        .header__logo {
+            margin-right: 75px;
+        }
+    }
+    
+    .header__pagination {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 800px;
+        gap: 40px;
+    
+        .header__list {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: space-between;
+        width: 460px;
+        padding-top: 5px;
+        }
+    }
+
+    .header__button {
+        display: flex;
+        gap: 10px;
+
+        .header__button-login, .header__button-sign-up, .header__button-lang {
+            min-width: 100px;
+        }
+
+        .header__button-login {
+            transition: background-color .1s ease-in-out;
+            &:hover {
+                background: $primary;
+                color: $white;
+                border-radius: 5px;
+                text-decoration: none;
+            }
+        }
+
+        .header__button-sign-up {
+            border: 1px solid $light;
+            border-radius: 5px;
+            transition: background-color .1s ease-in-out;
+            &:hover {
+                background: $primary;
+                color: $white;
+                border: none;
+                text-decoration: none;
+            } 
+        }
+
+        .header__button-lang {
+            text-align: center;
+            padding-top: 7px;
+            background: url(../img/header/lang.png) 70px 15px no-repeat;
+        }
+    }
+  }
+
+  .header__hero-img-plane-an {
+    position: absolute;
+    right: 35%;
+    top: 18%; 
+    z-index: 1;
+    will-change: contents;
+    transition: animation 3s;
+        &:hover {
+            animation: plane; 
+            animation-duration: 3s;
+            animation-iteration-count: 1;
+        }
+        @media (max-width: 780px) {
+            display: none;
+        }
+    } 
+}
+
+@-webkit-keyframes plane {
+    from {
+        right: 35%;
+        top: 18%;  
+        animation-timing-function: ease-in
+      }
+    40% {
+        right: -30%;
+        top: -30%;
+        transform: rotate(-5deg);
+    }
+    41% {
+        right: 100%;
+        top: -15%;
+        transform: rotate(90deg);   
+    }
+    100% {
+        right: 35%;
+        top: 18%;  
+        animation-timing-function: ease-out;
+    }
+}
+
+.header__hero {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    margin: 18px auto;
+    max-width: 1200px;
+    @media (max-width: 780px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    .header__hero-img{
+        grid-column: 4/9;
+        grid-row: 1/2;
+        position: relative;
+        @media (max-width: 780px) {
+            display: none;
+        }
+       
+        .header__hero-img-plane {
+            position: absolute;
+            left: 80%;
+            top: 15%;
+            @media (max-width: 780px) {
+                display: none;
+            }
+        }
+    }
+
+    .header__hero-desc {
+        grid-column: 1/5;
+        grid-row: 1/2;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        max-width: 547px;
+        max-height: 535px;
+        
+        h1 {
+            color: $primary;
+            font-family: $main_font;
+            font-weight: $bold;
+            font-size: 20px;
+            line-height: 30px;
+            text-transform: uppercase;
+            @media (max-width: 780px) {
+                text-align: center;
+            }
+        }
+        h2 {
+            margin-top: 24px;
+            font-family: $font_acent;
+            font-weight: $bold;
+            font-size: 84px;
+            line-height: 106%;
+            letter-spacing: -0.04em;
+            color: $dark_3;
+            @media (max-width: 990px) {
+                font-size: 64px;
+                
+            }
+            @media (max-width: 780px) {
+                font-size: 48px;
+                text-align: center;
+            }
+        }
+        p {
+            margin-top: 30px;
+            max-width: 477px;
+            font-family: $main_font;
+            font-weight: $medium;
+            font-size: 16px;
+            line-height: 188%;
+            color: $light;
+            @media (max-width: 780px) {
+                font-size: 13px;
+                text-align: center;
+                max-width: 300px;
+            }
+        }
+
+        .header__hero-desc_button {
+
+            .header__hero-desc_button_more {
+                margin-top: 34px;
+                width: 170px;
+                height: 60px;
+                color: $white;
+                background: #F1A501;
+                box-shadow: 0px 20px 35px rgba(241, 165, 1, 0.15);
+                border-radius: 10px;
+                margin-right: 50px;
+            }
+
+            .header__hero-desc_button_play {
+                color: $light;
+               
+                .btn-play {
+                    position: relative;
+                    bottom: 27px;
+                }
+            }
+
+            @media (max-width: 845px) {  
+                .header__hero-desc_button_more {
+                    margin-left: 30px;
+                }
+                .header__hero-desc_button_play {
+                    margin-top: 30px;
+                }
+            }
+            @media (max-width: 480px) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                .header__hero-desc_button_play {
+                    margin-left: -60px;
+                }
+            }
+
+        }
+        
+        @media (max-width:780px) {
+            align-items: center;
+        }
+    }
+}
+
+
